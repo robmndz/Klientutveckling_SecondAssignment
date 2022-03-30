@@ -10,19 +10,21 @@ Kravsättning
 •	Du ska använda följande API för att hämta quiz-frågorna: https://opentdb.com/api_config.php .
 
 G
+
+
 •	10 quiz-frågor ska alltid hämtas.
 •	Frågorna som hämtas behöver endast vara sant/falskt påståenden.
 •	Användaren kan välja mellan minst tre olika kategorier.
 •	Användaren ska kunna besvara samtliga frågor och sedan klicka på en knapp för att se sitt resultat.
 •	Användaren ska kunna se vilka frågor hen besvarat rätt och/eller felaktigt.
 •	Använd färg och text för att meddela användarens resultat utefter följande kriterier:
-•	<50% - Underkänt (röd)
-•	>50% och <75% - Godkänt (gul/orange)
-•	 > 75% - Mycket väl godkänt (grönt)
+    •	<50% - Underkänt (röd)
+    •	>50% och <75% - Godkänt (gul/orange)
+    •	 > 75% - Mycket väl godkänt (grönt)
 •	Användaren ska kunna göra om quizet och be om nya frågor (utan att behöva refresha/uppdatera hela sidan).
 
-VG
 
+VG
 
 
 •	Alla G-krav
