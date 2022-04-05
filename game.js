@@ -78,3 +78,59 @@ let showCorrectAndWrongAnswers = () => {
     $('#correctlyAnswered').show();
     $('#wronglyAnswered').show();
 }
+
+let displayAllCorrectlyOrWronglyAnswered = (getClass, array) => {
+    getClass.unbind().click( () => {
+        $('.correct-wrong').remove();
+        array.forEach( element => {
+            $(`<li class ="correct-wrong">${element.Question}</li>`).appendTo(getClass.find('ul'));
+        })
+    })
+}
+
+export let game = data => {
+    resetQuiz();
+    displayCurrentQuestion(data);
+    $('#nextButton').unbind().click( () => {
+        if(!quizOver){
+            let value = $('input[type="radio"]:checked').val();
+            if(value === undefined) { 
+                $('.quizMessage').text('Please select an answer');
+                $('.quizMessage').show();
+            } else {
+                $('.quizMessage').hide();
+                if(value === data[currentQuestion].correct_answer){
+                    correctAnswers++;
+                    answeredCorrect.push({
+                        Question : `Question #${currentQuestion + 1}: ${data[currentQuestion].question} {Correct answer: ${data[currentQuestion].correct_answer}}`}
+                        );
+                }else {
+                    answeredWorng.push({
+                        Question : `Question #${currentQuestion + 1}: ${data[currentQuestion].question} {Correct answer: ${data[currentQuestion].correct_answer}}`
+                    });
+                }
+                currentQuestion++;
+                $('#myBar').css('width', `${(currentQuestion/data.length)*100}%`);
+                /* console.log(currentQuestion/data.length) */
+                if(currentQuestion < data.length){
+                    displayCurrentQuestion(data);
+                } else {
+                    displayScore(data);
+                    $('#nextButton').text('Play Again?');
+                    showCorrectAndWrongAnswers();
+                    correctlyAnswered.appendTo($('#profileActivity'));
+                    wrongAnswered.appendTo($('#profileActivity'));
+                    displayAllCorrectlyOrWronglyAnswered($('.answeredCorrect'),answeredCorrect);
+                    displayAllCorrectlyOrWronglyAnswered($('.answeredWrong'),answeredWorng);
+                    console.log($('.answeredCorrect ul'));
+                    quizOver = true;
+                   /*  ul li:nth-child(2) */
+                }
+            }
+        } else {
+            resetQuiz();
+            displayCurrentQuestion(data);
+            hideScore();
+        }
+    });
+}
