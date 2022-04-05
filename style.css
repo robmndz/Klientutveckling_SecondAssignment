@@ -1,0 +1,30 @@
+* {
+    box-sizing: border-box;
+    padding: 0px;
+    margin: 0px;
+    font-family: 'Roboto', sans-serif;
+}
+
+body{ 
+    padding:2% 3% 10% 3%; 
+    text-align:center; 
+    background-color: rgb(243, 242, 242);
+} 
+h1{ 
+    color: #000; 
+    margin-top:80px; 
+    /* font-family: 'VT323', monospace; */
+    font-family: 'Press Start 2P', cursive;
+    font-size: 80px;
+}
+
+h2 {
+    margin-top: 15px;
+    margin-bottom: 12px;
+}
+
+h3 {
+    color: #000; 
+    margin-top:15px; 
+    font-size: 30px;
+}
