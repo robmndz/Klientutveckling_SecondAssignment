@@ -40,9 +40,7 @@ export let game = data => {
                     wrongAnswered.appendTo($('#profileActivity'));
                     displayAllCorrectlyOrWronglyAnswered($('.answeredCorrect'),answeredCorrect);
                     displayAllCorrectlyOrWronglyAnswered($('.answeredWrong'),answeredWorng);
-                    console.log($('.answeredCorrect ul'));
                     quizOver = true;
-                   /*  ul li:nth-child(2) */
                 }
             }
         } else {
