@@ -27,10 +27,10 @@ let displayCurrentQuestion = data => {
    shuffled = choice.sort(() => Math.random() - 0.5)
 
    for(let i = 0; i < numChoices; i++){
-      $(<li class="radio">
-      <input id="radio${i}" name="radioBtn" type="radio" value="${shuffled[i]}"> 
-      <label class="radio" for="radio${i}">${shuffled[i]}</label>
-      </li>)
-      .appendTo(choiceList);
-  }
+    $(`<li class="radio">
+    <input id="radio${i}" name="radioBtn" type="radio" value="${shuffled[i]}"> 
+    <label class="radio" for="radio${i}">${shuffled[i]}</label>
+    </li>`)
+    .appendTo(choiceList);
+    }
 };
