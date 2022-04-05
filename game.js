@@ -53,13 +53,13 @@ let displayScore = (data) => {
     let score = (correctAnswers/data.length)*100;
     let result = $('.quizContainer > .result');
     if(score < 50){
-        result.text(Hard luck, you failed! Your score is: ${score});
+        result.text(`Hard luck, you failed! Your score is: ${score}`);
         result.css('background', '#FE703E');
     } else if (score <75){
-        result.text(You passed! Your score is: ${score});
+        result.text(`You passed! Your score is: ${score}`);
         result.css('background', '#FFA500');
     } else {
-        result.text(Well Done, you passed! Your score is: ${score});
+        result.text(`Well Done, you passed! Your score is: ${score}`);
         result.css('background', '#27D90D');
     }
     result.show();
