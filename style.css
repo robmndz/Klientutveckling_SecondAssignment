@@ -113,6 +113,11 @@ ul{
 
 .radio {
     margin: 10px;
+    cursor: pointer;
+}
+
+.radio:hover{
+    transform: scale(1.15);
 }
 
 .copyright {
