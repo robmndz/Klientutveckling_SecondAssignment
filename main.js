@@ -64,3 +64,26 @@ let rednerQuestionUrl = (array) => {
     }
     return url;
 }
+
+let serializeForm =  form => {
+	let obj = {};
+	let formData = new FormData(form);
+	for (let key of formData.keys()) {
+		obj[key] = formData.get(key);
+	}
+	return Object.entries(obj);
+};
+
+getQuestionsBtn.on('click', async () => {
+
+    let viewQuestionsUrl = rednerQuestionUrl(serializeForm(form));
+    let data = await getData(viewQuestionsUrl);
+
+    if(data.response_code == 0){
+        game(data.results);
+        gameActivity.show();
+    }
+    if(data.response_code == 1){
+        alert('Not enough questions, Please try less number of questions for this category');
+    }
+});
