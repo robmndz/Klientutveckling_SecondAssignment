@@ -34,3 +34,47 @@ let displayCurrentQuestion = data => {
     .appendTo(choiceList);
     }
 };
+
+let resetQuiz = () => {
+    $('#nextButton').text('Next Question');
+    $('.quizMessage').hide();
+    hideCorrectAndWrongAnswers();
+    $('.correct-wrong').remove();
+    quizOver = false;
+    currentQuestion = 0;
+    correctAnswers = 0;
+    $('#myBar').css('width', '0%');
+    answeredCorrect = [];
+    answeredWorng = [];
+    hideScore();
+}
+
+let displayScore = (data) => {
+    let score = (correctAnswers/data.length)*100;
+    let result = $('.quizContainer > .result');
+    if(score < 50){
+        result.text(Hard luck, you failed! Your score is: ${score});
+        result.css('background', '#FE703E');
+    } else if (score <75){
+        result.text(You passed! Your score is: ${score});
+        result.css('background', '#FFA500');
+    } else {
+        result.text(Well Done, you passed! Your score is: ${score});
+        result.css('background', '#27D90D');
+    }
+    result.show();
+}
+
+let hideScore = () => {
+    $('.result').hide(); 
+}
+
+let hideCorrectAndWrongAnswers = () => {
+    $('#correctlyAnswered').hide();
+    $('#wronglyAnswered').hide();
+}
+
+let showCorrectAndWrongAnswers = () => {
+    $('#correctlyAnswered').show();
+    $('#wronglyAnswered').show();
+}
