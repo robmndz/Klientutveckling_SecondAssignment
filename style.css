@@ -66,3 +66,56 @@ h3 {
     font-size: 18px;
     border-radius: 5px;
 }
+
+#profileActivity, .quizContainer {
+    display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	justify-content: center;
+	align-items: center;
+	align-content: stretch;
+    
+}
+
+.result {
+    width: 70%;
+    height: 25px;
+    border-radius: 25px;
+    margin: 15px;
+    font-weight: 600;
+    padding-top: 2px;
+    
+}
+
+/* Progress bar */
+#myProgress {
+    width: 70%;
+    height: 25px;
+    background-color: grey;
+    border-radius: 25px;
+
+  }
+  
+#myBar {
+    width: 0%;
+    height: 25px;
+    background-color: rgb(11, 168, 11);
+    border-radius: 25px;
+}
+
+ul{
+    list-style-type: none;
+}
+
+.question {
+    margin: 7px;
+}
+
+.radio {
+    margin: 10px;
+}
+
+.copyright {
+    margin-top: 50px;
+    font-size: 16px;
+}
