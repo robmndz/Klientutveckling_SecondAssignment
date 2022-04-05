@@ -27,6 +27,46 @@
          <h3>The ultimate online trivia quiz</h3>
       </div>
    </header>
+   <section>      <!-- 2 -->
+      <div class="game-options">
+         <form id="myForm">
+            <div class="selectors">
+               <label for="amountOfQuestionsId">Choose the number of questions: </label>
+               <select name="amount" id="amountOfQuestionsId" class="dropdown">
+                  <option value="5" for="amountOfQuestionsId">5</option>
+                  <option value="10" for="amountOfQuestionsId">10</option>
+                  <option value="15" for="amountOfQuestionsId">15</option>
+               </select>
+            </div>
+            <div class="selectors">
+               <label for="categoryId">Select a category:</label>
+               <select name="category" id="categoryId" class="dropdown"> 
+                  <option disabled hidden selected>Categories</option>
+               </select>
+            </div>
+            <div class="selectors">
+               <label for="selectDificultyId">Choose the level of difficulty: </label>
+               <select name="difficulty" id="selectDificultyId" class="dropdown">
+                  <option disabled hidden selected>Difficulties</option>
+                  <option value="easy" for="selectDificultyId">Easy</option>
+                  <option value="medium" for="selectDificultyId">Medium</option>
+                  <option value="hard" for="selectDificultyId">Hard</option>
+               </select>
+            </div>
+            <div class="selectors">
+               <label for="typeId">Choose the type of answers: </label>
+               <select name="type" id="typeId" class="dropdown">
+                  <option value="boolean" for="typeId">True / False</option>
+                  <option value="multiple" for="typeId">Multiple Choice</option>
+               </select>
+            </div>
+         </form>
+         <div class="next">
+            <button class="btn" id="getFilters">Options</button>
+            <button class="btn" id="getQuestions">Generate questions</button>
+         </div>
+      </div>
+   </section>
    
    
 
