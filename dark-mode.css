@@ -40,3 +40,20 @@
    transition: .4s;
    width: 26px;
 }
+
+.hide{
+   display: none;
+}
+
+input:checked + .slider{
+   background-color: #66bb6a;
+}
+input:checked + .slider:before{
+   transform: translateX(26px);
+}
+.slider.round{
+   border-radius: 34px;
+}
+.slider.round:before{
+   border-radius: 50%;
+}
