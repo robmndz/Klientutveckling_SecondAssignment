@@ -25,19 +25,23 @@
 import { trivia_categories } from './utils.js'
 import { game } from './game.js'
 
+/* Dark-mode funktionalitet */
 $('#checkbox').unbind().click( () => {
     let element = document.body;
     element.classList.toggle('dark'); 
 });
 
+/* Options button - slide toggle */
 $('#getFilters').unbind().click( () => {
     $('#myForm').slideToggle('hide'); 
 });
 
+/* Variabler */
 const form = document.querySelector('#myForm');
 let getQuestionsBtn = $('#getQuestions');
 let gameActivity = $('#profileActivity');
 
+/* Funktionalitet för att sätta category */
 trivia_categories.forEach( (type) => {
     let option = document.createElement('option');
     option.value = type.id;
@@ -45,14 +49,16 @@ trivia_categories.forEach( (type) => {
     document.querySelector('#categoryId').append(option);
 });
 
+/* Get data */
 let getData = async (url) => {
     let response = await fetch(url);
     let json = await response.json();
     return json;
 };
 
+/* Create url - Get questions from APIn*/
 let rednerQuestionUrl = (array) => {
-    let url = `https://opentdb.com/api.php?`;
+    let url = `https://opentdb.com/api.php?`;   
     if(array.length > 3){
          url += `${array[0][0]}=${array[0][1]}&${array[1][0]}=${array[1][1]}&${array[2][0]}=${array[2][1]}&${array[3][0]}=${array[3][1]}`;
     } else if(array.length > 2){
@@ -74,8 +80,8 @@ let serializeForm =  form => {
 	return Object.entries(obj);
 };
 
+/* Get questions */
 getQuestionsBtn.on('click', async () => {
-
     let viewQuestionsUrl = rednerQuestionUrl(serializeForm(form));
     let data = await getData(viewQuestionsUrl);
 

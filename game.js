@@ -96,6 +96,7 @@ let resetQuiz = () => {
     hideScore();
 }
 
+/* Display score with colors */
 let displayScore = (data) => {
     let score = (correctAnswers/data.length)*100;
     let result = $('.quizContainer > .result');
